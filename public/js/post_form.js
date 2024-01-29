@@ -1,12 +1,11 @@
 $(document).ready(function () {
-    // Adiciona um ouvinte de evento para o formulário
     $("#member-form").submit(function (e) {
-        e.preventDefault(); // Impede o envio padrão do formulário
+        e.preventDefault();
 
-        // Cria um objeto FormData para os dados do formulário
+        $("#load-form").removeClass("hidden");
+        $("#load-form").addClass("flex");
         var formData = new FormData(this);
 
-        // Chama a função AJAX para enviar os dados
         postDataForm(formData);
     });
 
@@ -15,16 +14,17 @@ $(document).ready(function () {
             url: "/members",
             type: "POST",
             data: formData,
-            contentType: false, // Importante para o envio de arquivos
-            processData: false, // Importante para o envio de arquivos
+            contentType: false,
+            processData: false,
             success: function (data) {
                 if (data) {
                     window.location.href = "/successful";
+                } else {
+                    window.location.href = "/errorform";
                 }
             },
             error: function (error) {
-                console.error("Erro ao enviar dados:", error);
-                // Lógica adicional em caso de erro, se necessário
+                window.location.href = "/errorform";
             },
         });
     }

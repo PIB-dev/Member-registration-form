@@ -56,7 +56,7 @@ function generatePreview() {
     var dataNascimento = $("#data_nascimento").val();
     var email = $("#email").val();
     var telefone = $("#telefone").val();
-    var tipo = $("#tipo").val();
+    var tipo = $("#tipo:checked").val();
     var cep = $("#cep").val();
     var logradouro = $("#logradouro").val();
     var numero = $("#numero").val();
@@ -66,18 +66,18 @@ function generatePreview() {
     var uf = $("#uf").val();
 
     // Atualização do conteúdo do preview
-    $("#preview-nome").text("Nome: " + nome);
-    $("#preview-data_nascimento").text("Data de Nascimento: " + dataNascimento);
-    $("#preview-email").text("Email: " + email);
-    $("#preview-telefone").text("Telefone: " + telefone);
-    $("#preview-tipo").text("Tipo: " + tipo);
-    $("#preview-cep").text("CEP: " + cep);
-    $("#preview-logradouro").text("Logradouro: " + logradouro);
-    $("#preview-numero").text("Número: " + numero);
-    $("#preview-complemento").text("Complemento: " + complemento);
-    $("#preview-bairro").text("Bairro: " + bairro);
-    $("#preview-localidade").text("Localidade: " + localidade);
-    $("#preview-uf").text("UF: " + uf);
+    $("#preview-nome").text(nome);
+    $("#preview-data_nascimento").text(dataNascimento);
+    $("#preview-email").text(email);
+    $("#preview-telefone").text(telefone);
+    $("#preview-tipo").text(tipo);
+    $("#preview-cep").text(cep);
+    $("#preview-logradouro").text(logradouro);
+    $("#preview-numero").text(numero);
+    $("#preview-complemento").text(complemento);
+    $("#preview-bairro").text(bairro);
+    $("#preview-localidade").text(localidade);
+    $("#preview-uf").text(uf);
 }
 
 document.getElementById("image").addEventListener("change", function () {
@@ -123,7 +123,7 @@ $(document).ready(function () {
     $("#cep").inputmask("99999-999", { placeholder: " " });
 });
 
-function postForm() {
+function checkInvalidFields() {
     // Verificar se há campos inválidos
     var camposInvalidos = document.querySelectorAll(":invalid");
 

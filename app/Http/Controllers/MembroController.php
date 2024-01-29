@@ -23,7 +23,7 @@ class MembroController extends Controller
             'localidade' => 'required|string|max:255',
             'uf' => 'required|string|max:2',
             'complemento' => 'nullable|string|max:255',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:3048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:3048',
         ]);
 
         
@@ -32,7 +32,7 @@ class MembroController extends Controller
             $imageName = $request->input('nome') . md5(strtotime('now')) . "." . $request->image->extension();
             $request->image->move(public_path('img/members'), $imageName);
         }else{
-            return 'Imagem invalida';
+            $imageName = null;
         }
 
         // Inserir o membro na tabela 'membros'
