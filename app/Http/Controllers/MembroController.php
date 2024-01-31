@@ -23,7 +23,7 @@ class MembroController extends Controller
             'localidade' => 'required|string|max:255',
             'uf' => 'required|string|max:2',
             'complemento' => 'nullable|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:3048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:4048',
         ]);
 
         

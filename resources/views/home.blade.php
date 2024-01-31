@@ -21,8 +21,8 @@
         <a class="mt-8 py-4 px-6 text-white font-thin rounded-full bg-blue-900" href="/form">FAÇA SEU CADASTRO</a>
     </div>
 </body>
-<footer class="w-full h-auto absolute bottom-0 flex justify-center">
-    <p class="text-blue-900 p-2 text-xs">
+<footer class="w-full py-5">
+    <p class="text-blue-900 text-xs text-center w-full">
         Desenvolvido pelo Ministério de Serviço da PIBFS
     </p>
 </footer>
