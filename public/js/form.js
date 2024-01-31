@@ -89,12 +89,12 @@ document.getElementById("image").addEventListener("change", function () {
         // Verifica o tamanho do arquivo em bytes
         var fileSize = file.size; // em bytes
 
-        var maxSize = 4 * 1024 * 1024; // 4 MB em bytes
+        var maxSize = 6 * 1024 * 1024; // 6 MB em bytes
 
         // Verifica se o tamanho do arquivo é maior que o permitido
         if (fileSize > maxSize) {
             alert(
-                "A imagem selecionada tem mais de 4mb. Por favor, escolha uma imagem menor."
+                "A imagem selecionada tem mais de 6mb. Por favor, escolha uma imagem menor."
             );
             // Limpa o campo de input de arquivo para que o usuário possa selecionar uma imagem menor
             this.value = "";
